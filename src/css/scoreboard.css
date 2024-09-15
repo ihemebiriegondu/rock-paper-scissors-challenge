@@ -60,7 +60,7 @@ header .score h1 {
 
 @media (max-width: 600px) {
   header {
-    width: 80%;
+    width: 90%;
     border-radius: 6px;
     padding: 3%;
   }

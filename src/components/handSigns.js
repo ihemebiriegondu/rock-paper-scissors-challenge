@@ -1,10 +1,14 @@
 import React from "react";
-import rock from "../images/icon-rock.svg";
+import "../css/handsigns.css";
 
-export default function HandSigns() {
+export default function HandSigns({ hand, handImg, location }) {
   return (
-    <div>
-      <img alt="handSign" src={rock} />
+    <div className={`handSigns ${location} ${hand}`}>
+      <div className="innerBg">
+        <div>
+          <img alt="handSign" src={handImg} />
+        </div>
+      </div>
     </div>
   );
 }
