@@ -1,8 +1,7 @@
 import React from "react";
-import HandSigns from "../components/handSigns";
 import Buttons from "../components/buttons";
 
-export default function FirstStep() {
+export default function Decision() {
   return (
     <main>
       <section>
@@ -14,6 +13,10 @@ export default function FirstStep() {
           <HandSigns />
           <p>The house Picked</p>
         </div>
+      </section>
+      <section>
+        <h1>You lose</h1>
+        <Buttons />
       </section>
       <Buttons />
     </main>

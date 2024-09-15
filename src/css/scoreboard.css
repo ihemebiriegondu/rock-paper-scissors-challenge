@@ -1,0 +1,83 @@
+header {
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 15px;
+  width: 50%;
+  padding: 1.1%;
+
+  display: flex;
+  justify-content: space-between;
+  justify-self: center;
+  align-items: center;
+}
+
+header .options {
+  padding-left: 3%;
+}
+
+header .options h2 {
+  font-weight: 600;
+  line-height: 0.9;
+  font-size: 1.7rem;
+}
+
+header .score {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 15%;
+}
+
+header .score p {
+  color: hsl(229, 64%, 46%);
+  font-weight: 500;
+}
+
+header .score h1 {
+  font-weight: 700;
+  color: hsl(229, 25%, 31%);
+  font-size: 3rem;
+}
+
+@media (max-width: 992px) {
+  header {
+    width: 60%;
+    border-radius: 10px;
+  }
+
+  header .options h2 {
+    font-size: 1.5rem;
+  }
+
+  header .score p {
+    font-size: 0.9rem;
+  }
+
+  header .score h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    width: 80%;
+    border-radius: 6px;
+    padding: 3%;
+  }
+
+  header .options h2 {
+    font-size: 1.25rem;
+  }
+
+  header .score {
+    width: 21%;
+  }
+
+  header .score p {
+    font-size: 0.8rem;
+  }
+
+  header .score h1 {
+    font-size: 2rem;
+  }
+}

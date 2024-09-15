@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Attributions() {
   return (
-    <footer class="attribution">
+    <footer className="attribution">
       Challenge by{" "}
       <a
         href="https://www.frontendmentor.io?ref=challenge"
