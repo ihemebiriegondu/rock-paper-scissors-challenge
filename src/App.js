@@ -1,10 +1,15 @@
 import { useState } from "react";
-import Attributions from "./components/attributions";
-import Buttons from "./components/buttons";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Scoreboard from "./components/scoreboard";
+import Buttons from "./components/buttons";
+import Attributions from "./components/attributions";
+
 import Original from "./original";
 import Bonus from "./bonus";
+
 import FirstStep from "./steps/step2";
+import Decision from "./steps/decision";
 
 import rockImg from "./images/icon-rock.svg";
 import paperImg from "./images/icon-paper.svg";
@@ -30,35 +35,54 @@ function App() {
   return (
     <div className="App">
       <Scoreboard />
-      {/*gameType === "original" ? (
-        <Original options={originalHandSigns} />
-      ) : (
-        <Bonus options={handSigns} />
-      )*/}
-      <FirstStep
-        options={gameType === "original" ? originalHandSigns : handSigns}
-        userPick={userPick}
-        housePick={housePick}
-        setHousePick={setHousePick}
-      />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              gameType === "original" ? (
+                <Original
+                  options={originalHandSigns}
+                  setGameType={setGameType}
+                  setUserPick={setUserPick}
+                />
+              ) : (
+                <Bonus options={handSigns} setGameType={setGameType} />
+              )
+            }
+          />
+
+          <Route
+            path="/step1"
+            element={
+              <FirstStep
+                options={
+                  gameType === "original" ? originalHandSigns : handSigns
+                }
+                userPick={userPick}
+                housePick={housePick}
+                setHousePick={setHousePick}
+              />
+            }
+          />
+
+          <Route
+            path="/decision"
+            element={
+              <Decision
+                options={
+                  gameType === "original" ? originalHandSigns : handSigns
+                }
+                userPick={userPick}
+                housePick={housePick}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
 
       <Buttons type={"rules"} text={"rules"} />
       <Attributions />
-      {/* Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-
-
-
-  */}
     </div>
   );
 }
