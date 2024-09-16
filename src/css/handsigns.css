@@ -14,7 +14,18 @@
   border: 15px solid;
 }
 
-.handSigns.original.rock {
+.handSigns.steps {
+  width: 150px;
+  height: 150px;
+  border: 25px solid;
+}
+
+.handSigns.steps img {
+  height: 80px;
+}
+
+.handSigns.original.rock,
+.handSigns.steps.rock {
   border-color: hsl(349, 70%, 56%);
   box-shadow: 0px 6px hsla(349, 71%, 52%, 0.637);
   margin: auto;
@@ -23,11 +34,13 @@
   bottom: 0;
 }
 
-.handSigns.original.rock:hover {
+.handSigns.original.rock:hover,
+.handSigns.steps.rock:hover {
   box-shadow: 6px 6px hsla(349, 71%, 52%, 0.637);
 }
 
-.handSigns.original.paper {
+.handSigns.original.paper,
+.handSigns.steps.paper {
   border-color: hsl(230, 89%, 65%);
   box-shadow: 0px 6px hsla(230, 89%, 62%, 0.637);
 
@@ -35,11 +48,13 @@
   left: 0;
 }
 
-.handSigns.original.paper:hover {
+.handSigns.original.paper:hover,
+.handSigns.steps.paper:hover {
   box-shadow: 6px 6px hsla(230, 89%, 62%, 0.637);
 }
 
-.handSigns.original.scissors {
+.handSigns.original.scissors,
+.handSigns.steps.scissors {
   border-color: hsl(40, 84%, 53%);
   box-shadow: 0px 6px hsla(39, 89%, 49%, 0.637);
   margin: auto;
@@ -47,15 +62,16 @@
   right: 0;
 }
 
-.handSigns.original.scissors:hover {
+.handSigns.original.scissors:hover,
+.handSigns.steps.scissors:hover {
   box-shadow: 6px 6px hsla(39, 89%, 49%, 0.637);
 }
 
 .handSigns .innerBg {
   width: 100%;
   height: 100%;
-  background-color: rgb(248, 245, 245);
-  box-shadow: inset 0px 6px rgb(219, 217, 217);
+  background-color: rgb(235, 232, 232);
+  box-shadow: inset 0px 6px rgb(202, 202, 202);
   border-radius: 50%;
 
   display: flex;
@@ -67,6 +83,19 @@
   text-align: center;
 }
 
+.handSigns.noImg {
+  border-color: transparent;
+}
+
+.handSigns.noImg .innerBg {
+  background-color: hsla(238, 48%, 15%, 0.45);
+  box-shadow: none;
+}
+
+.handSigns.steps.noImg img {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .handSigns.original {
     width: 80px;
@@ -75,6 +104,36 @@
   }
 
   .handSigns.original img {
+    height: 40px;
+  }
+
+  .handSigns.steps {
+    width: 90px;
+    height: 90px;
+    border: 12px solid;
+  }
+
+  .handSigns.steps img {
+    height: 42px;
+  }
+
+  .handSigns.noImg {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 330px) {
+  .handSigns.steps {
+    width: 80px;
+    height: 80px;
+    border: 10px solid;
+  }
+
+  .handSigns.noImg {
+    border-color: transparent;
+  }
+
+  .handSigns.steps img {
     height: 40px;
   }
 }

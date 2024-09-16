@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import "../css/buttons.css";
 
-export default function Buttons() {
+export default function Buttons({ type, text }) {
   return (
-    <button>Rules</button>
-  )
+    <div className={`buttonDiv ${type}`}>
+      <button>{text}</button>
+    </div>
+  );
 }

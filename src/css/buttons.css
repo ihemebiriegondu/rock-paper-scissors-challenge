@@ -1,0 +1,34 @@
+.buttonDiv.rules {
+  text-align: end;
+}
+
+.buttonDiv button {
+  text-transform: uppercase;
+  outline: none;
+  border-radius: 8px;
+  transition: background-color 0.4s ease;
+}
+
+.buttonDiv.rules button {
+  background: none;
+  padding: 10px 30px;
+  border: 2px solid rgba(255, 255, 255, 0.76);
+  color: white;
+}
+
+.buttonDiv.rules button:hover {
+  background-color: white;
+  cursor: pointer;
+  color: hsl(229, 25%, 31%);
+}
+
+@media (max-width: 600px) {
+  .buttonDiv.rules {
+    text-align: center;
+  }
+
+  .buttonDiv.rules button {
+    font-size: 1rem;
+    padding: 10px 35px;
+  }
+}
