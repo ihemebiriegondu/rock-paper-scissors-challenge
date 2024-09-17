@@ -2,7 +2,9 @@ import React from "react";
 import Buttons from "../components/buttons";
 import HandSigns from "../components/handSigns";
 
-export default function Decision({ options, userPick, housePick }) {
+import "../css/decision.css";
+
+export default function Decision({ options, userPick, housePick, winner }) {
   const userImg = options.find((option) => option.hand === userPick).handImg;
   const houseImg =
     housePick === ""
@@ -11,25 +13,22 @@ export default function Decision({ options, userPick, housePick }) {
 
   return (
     <main className="decision">
-      {/*from step2.js */}
-      <section className="step2">
-        <div className="step2Section">
-          <div className="pickedOptions">
-            <HandSigns location={"steps"} hand={userPick} handImg={userImg} />
-            <p>You Picked</p>
-          </div>
-          <div className="pickedOptions">
-            <HandSigns location={"steps"} hand={housePick} handImg={houseImg} />
-            <p>The house Picked</p>
-          </div>
+      <section className="decisionSection">
+        <div className={`pickedOptions ${winner === "user" ? "winner" : ""}`}>
+          <HandSigns location={"steps"} hand={userPick} handImg={userImg} />
+          <p>You Picked</p>
+          {winner === "user" && <div className="radialBg"></div>}
+        </div>
+        <div className="playAgainDiv">
+          <h1>You win</h1>
+          <Buttons type={"playAgain"} text={"play again"} />
+        </div>
+        <div className={`pickedOptions ${winner === "house" ? "winner" : ""}`}>
+          <HandSigns location={"steps"} hand={housePick} handImg={houseImg} />
+          <p>The house Picked</p>
+          {winner === "house" && <div className="radialBg"></div>}
         </div>
       </section>
-
-      <section>
-        <h1>You lose</h1>
-        <Buttons />
-      </section>
-      <Buttons />
     </main>
   );
 }

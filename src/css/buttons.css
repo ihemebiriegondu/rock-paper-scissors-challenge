@@ -1,12 +1,21 @@
+.buttonDiv {
+  position: relative;
+  z-index: 2;
+}
+
 .buttonDiv.rules {
   text-align: end;
+}
+
+.buttonDiv.playAgain {
+  text-align: center;
 }
 
 .buttonDiv button {
   text-transform: uppercase;
   outline: none;
   border-radius: 8px;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease, color 0.5s;
 }
 
 .buttonDiv.rules button {
@@ -16,10 +25,22 @@
   color: white;
 }
 
+.buttonDiv.playAgain button {
+  background: white;
+  padding: 13px 48px;
+  color: hsl(229, 25%, 31%);
+  font-weight: 600;
+}
+
 .buttonDiv.rules button:hover {
   background-color: white;
   cursor: pointer;
   color: hsl(229, 25%, 31%);
+}
+
+.buttonDiv.playAgain button:hover {
+  cursor: pointer;
+  color: hsl(0, 55%, 52%);
 }
 
 @media (max-width: 600px) {
@@ -30,5 +51,18 @@
   .buttonDiv.rules button {
     font-size: 1rem;
     padding: 10px 35px;
+  }
+
+  .buttonDiv.playAgain button {
+    font-size: 1rem;
+    font-weight: normal;
+    word-spacing: 4px;
+    padding: 13px 60px;
+  }
+}
+
+@media (max-width: 300px) {
+  .buttonDiv.playAgain button {
+    padding: 13px 50px;
   }
 }

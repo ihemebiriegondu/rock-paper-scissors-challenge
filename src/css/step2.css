@@ -1,5 +1,5 @@
 .step2 {
-  padding: 5%;
+  padding: 60px 5%;
 }
 
 .step2Section {
@@ -31,7 +31,7 @@
   }
 
   .step2Section {
-    width: 100%;
+    width: 80%;
     margin: 0;
     justify-content: space-between;
     justify-self: center;
@@ -46,6 +46,12 @@
   .step2Section .pickedOptions p {
     font-size: 0.9rem;
     letter-spacing: 1.6px;
+  }
+}
+
+@media (max-width: 500px) {
+  .step2Section {
+    width: 100%;
   }
 }
 

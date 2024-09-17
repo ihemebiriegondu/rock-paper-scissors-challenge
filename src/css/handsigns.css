@@ -1,6 +1,8 @@
 .handSigns {
   border-radius: 50%;
   transition: box-shadow 0.4s;
+  position: relative;
+  z-index: 2;
 }
 
 .handSigns:hover {

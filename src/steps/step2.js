@@ -11,8 +11,8 @@ export default function FirstStep({ options, userPick, housePick }) {
       : options.find((option) => option.hand === housePick).handImg;
 
   return (
-    <section className="step2">
-      <div className="step2Section">
+    <main className="step2">
+      <section className="step2Section">
         <div className="pickedOptions">
           <HandSigns location={"steps"} hand={userPick} handImg={userImg} />
           <p>You Picked</p>
@@ -21,7 +21,7 @@ export default function FirstStep({ options, userPick, housePick }) {
           <HandSigns location={"steps"} hand={housePick} handImg={houseImg} />
           <p>The house Picked</p>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }

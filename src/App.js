@@ -19,8 +19,11 @@ import spockImg from "./images/icon-spock.svg";
 
 function App() {
   const [gameType, setGameType] = useState("original");
+
   const [userPick, setUserPick] = useState("scissors");
   const [housePick, setHousePick] = useState("");
+
+  const [winner, setWinner] = useState("user");
 
   const handSigns = [
     { hand: "rock", handImg: rockImg },
@@ -62,12 +65,13 @@ function App() {
                 userPick={userPick}
                 housePick={housePick}
                 setHousePick={setHousePick}
+                setWinner={setWinner}
               />
             }
           />
 
           <Route
-            path="/decision"
+            path="/winner"
             element={
               <Decision
                 options={
@@ -75,6 +79,7 @@ function App() {
                 }
                 userPick={userPick}
                 housePick={housePick}
+                winner={winner}
               />
             }
           />
