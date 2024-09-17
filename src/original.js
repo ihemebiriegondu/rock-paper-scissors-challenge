@@ -34,7 +34,7 @@ export default function Original({ options, setUserPick, setHousePick }) {
     <main className="originalSection">
       <section className="selectHand">
         <div>
-          <img alt="handSign" src={tringle} className="triangleSvg" />
+          <img alt="triangle" src={tringle} className="triangleSvg" />
         </div>
         <div>
           {options.map((handSign) => (

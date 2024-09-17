@@ -2,14 +2,14 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Scoreboard from "./components/scoreboard";
-import Buttons from "./components/buttons";
 import Attributions from "./components/attributions";
 import Rules from "./components/rules";
+import ButtonsFooter from "./components/buttonsFooter";
 
 import Original from "./original";
 import Bonus from "./bonus";
 
-import FirstStep from "./steps/step2";
+import FirstStep from "./steps/step1";
 import Decision from "./steps/decision";
 
 import rockImg from "./images/icon-rock.svg";
@@ -38,7 +38,9 @@ function App() {
       ? ""
       : sessionStorage.getItem("winner")
   );
+
   const [score, setScore] = useState(0);
+  const [swipeScore, setSwipeScore] = useState("false");
 
   const handSigns = [
     { hand: "rock", handImg: rockImg },
@@ -52,7 +54,7 @@ function App() {
 
   return (
     <div className="App">
-      <Scoreboard score={score} winner={winner} />
+      <Scoreboard score={score} winner={winner} swipeScore={swipeScore} />
       <BrowserRouter>
         <Routes>
           <Route
@@ -61,12 +63,15 @@ function App() {
               gameType === "original" ? (
                 <Original
                   options={originalHandSigns}
-                  setGameType={setGameType}
                   setUserPick={setUserPick}
                   setHousePick={setHousePick}
                 />
               ) : (
-                <Bonus options={handSigns} setGameType={setGameType} />
+                <Bonus
+                  options={handSigns}
+                  setUserPick={setUserPick}
+                  setHousePick={setHousePick}
+                />
               )
             }
           />
@@ -83,6 +88,7 @@ function App() {
                 setWinner={setWinner}
                 score={score}
                 setScore={setScore}
+                setSwipeScore={setSwipeScore}
               />
             }
           />
@@ -101,13 +107,13 @@ function App() {
             }
           />
         </Routes>
+        <ButtonsFooter
+          setShowRules={setShowRules}
+          gameType={gameType}
+          setGameType={setGameType}
+        />
       </BrowserRouter>
 
-      <Buttons
-        type={"rules"}
-        text={"rules"}
-        clickFunction={() => setShowRules(true)}
-      />
       <Attributions />
 
       <Rules gameType={gameType} visible={showRules} close={setShowRules} />

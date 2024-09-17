@@ -14,7 +14,7 @@ export default function Rules({ gameType, visible, close }) {
           {gameType === "original" ? (
             <img alt="rules" src={rulesOriginal} className="rulesImg" />
           ) : (
-            <img alt="rules" src={rulesBonus} className="rulesImg" />
+            <img alt="rules" src={rulesBonus} className="rulesImg bigger" />
           )}
           <img
             alt="closeIcon"

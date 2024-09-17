@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import "../css/scoreboard.css";
 
-export default function Scoreboard({ score, winner }) {
+export default function Scoreboard({ score, winner, swipeScore }) {
   useEffect(() => {
     const scoreText = document.querySelector(".scoreText");
-    scoreText.classList.remove("slideIn");
-    scoreText.classList.add("slideOut");
+    if (swipeScore) {
+      scoreText.classList.remove("slideIn");
+      scoreText.classList.add("slideOut");
 
-    setTimeout(() => {
-      scoreText.classList.remove("slideOut");
-      scoreText.classList.add("slideIn");
-    }, 300);
-    return () => {};
-  }, [winner]);
+      setTimeout(() => {
+        scoreText.classList.remove("slideOut");
+        scoreText.classList.add("slideIn");
+      }, 300);
+    }
+  }, [winner, swipeScore]);
 
   return (
     <header>

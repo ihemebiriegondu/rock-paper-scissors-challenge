@@ -16,6 +16,13 @@
   border: 15px solid;
 }
 
+.handSigns.bonus {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border: 13px solid;
+}
+
 .handSigns.steps {
   width: 150px;
   height: 150px;
@@ -24,6 +31,10 @@
 
 .handSigns.steps img {
   height: 80px;
+}
+
+.handSigns.bonus img {
+  height: 50px;
 }
 
 .handSigns.original.rock,
@@ -36,8 +47,16 @@
   bottom: 0;
 }
 
+.handSigns.bonus.rock {
+  border-color: hsl(349, 70%, 56%);
+  box-shadow: 0px 5px hsla(349, 71%, 52%, 0.637);
+  right: 25px;
+  bottom: 0px;
+}
+
 .handSigns.original.rock:hover,
-.handSigns.steps.rock:hover {
+.handSigns.steps.rock:hover,
+.handSigns.bonus.rock:hover {
   box-shadow: 6px 6px hsla(349, 71%, 52%, 0.637);
 }
 
@@ -45,13 +64,20 @@
 .handSigns.steps.paper {
   border-color: hsl(230, 89%, 65%);
   box-shadow: 0px 6px hsla(230, 89%, 62%, 0.637);
-
   top: 0;
   left: 0;
 }
 
+.handSigns.bonus.paper {
+  border-color: hsl(230, 89%, 65%);
+  box-shadow: 0px 5px hsla(230, 89%, 62%, 0.637);
+  right: -20px;
+  transform: translateY(95%);
+}
+
 .handSigns.original.paper:hover,
-.handSigns.steps.paper:hover {
+.handSigns.steps.paper:hover,
+.handSigns.bonus.paper:hover {
   box-shadow: 6px 6px hsla(230, 89%, 62%, 0.637);
 }
 
@@ -64,9 +90,57 @@
   right: 0;
 }
 
+.handSigns.bonus.scissors {
+  border-color: hsl(40, 84%, 53%);
+  box-shadow: 0px 5px hsla(39, 89%, 49%, 0.637);
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .handSigns.original.scissors:hover,
-.handSigns.steps.scissors:hover {
+.handSigns.steps.scissors:hover,
+.handSigns.bonus.scissors:hover {
   box-shadow: 6px 6px hsla(39, 89%, 49%, 0.637);
+}
+
+.handSigns.steps.lizard {
+  border-color: hsl(278, 77%, 59%);
+  box-shadow: 0px 5px hsla(278, 73%, 47%, 0.637);
+  right: 0;
+  bottom: 0;
+}
+
+.handSigns.bonus.lizard {
+  border-color: hsl(278, 77%, 59%);
+  box-shadow: 0px 5px hsla(278, 73%, 47%, 0.637);
+  margin: auto;
+  left: 25px;
+  bottom: 0px;
+}
+
+.handSigns.bonus.lizard:hover {
+  box-shadow: 5px 5px hsla(278, 73%, 47%, 0.637);
+}
+
+.handSigns.steps.spock {
+  border-color: rgb(120, 203, 206);
+  box-shadow: 0px 5px rgba(64, 224, 208, 0.637);
+  right: 0;
+  bottom: 0;
+}
+
+.handSigns.bonus.spock {
+  border-color: rgb(120, 203, 206);
+  box-shadow: 0px 5px rgba(64, 224, 208, 0.637);
+  margin: auto;
+  left: -20px;
+  transform: translateY(95%);
+}
+
+.handSigns.bonus.spock:hover {
+  box-shadow: 5px 5px rgba(64, 224, 208, 0.637);
 }
 
 .handSigns .innerBg {
@@ -117,6 +191,36 @@
     width: 80px;
     height: 80px;
     border: 10px solid;
+  }
+
+  .handSigns.bonus {
+    width: 70px;
+    height: 70px;
+    border: 10px solid;
+  }
+
+  .handSigns.bonus.rock {
+    right: 25px;
+    bottom: -50px;
+  }
+
+  .handSigns.bonus.paper {
+    right: 0px;
+    transform: translateY(80%);
+  }
+
+  .handSigns.bonus.lizard {
+    left: 25px;
+    bottom: -50px;
+  }
+
+  .handSigns.bonus.spock {
+    left: 0px;
+    transform: translateY(80%);
+  }
+
+  .handSigns.bonus img {
+    height: 35px;
   }
 
   .handSigns.original img {

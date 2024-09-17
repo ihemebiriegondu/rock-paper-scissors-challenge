@@ -2,11 +2,6 @@
   position: relative;
   z-index: 2;
   width: fit-content;
-  margin-left: auto;
-}
-
-.buttonDiv.rules {
-  text-align: end;
 }
 
 .buttonDiv.playAgain {
@@ -25,13 +20,30 @@
   padding: 10px 30px;
   border: 2px solid rgba(255, 255, 255, 0.76);
   color: white;
-  transform: translateX(300%);
-  animation: buttonSlideIn 0.5s ease 0.8s forwards;
 }
 
-@keyframes buttonSlideIn {
+.buttonDiv.rules.right button {
+  transform: translateX(300%);
+  animation: buttonSlideInRight 0.5s ease 0.8s forwards;
+}
+
+@keyframes buttonSlideInRight {
   from {
     transform: translateX(300%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.buttonDiv.rules.left button {
+  transform: translateX(-300%);
+  animation: buttonSlideInLeft 0.5s ease 0.8s forwards;
+}
+
+@keyframes buttonSlideInLeft {
+  from {
+    transform: translateX(-300%);
   }
   to {
     transform: translateX(0%);
@@ -57,17 +69,9 @@
 }
 
 @media (max-width: 600px) {
-  .buttonDiv {
-    margin: auto;
-  }
-
-  .buttonDiv.rules {
-    text-align: center;
-  }
-
   .buttonDiv.rules button {
-    font-size: 1rem;
-    padding: 10px 35px;
+    font-size: 0.9rem;
+    padding: 10px 30px;
   }
 
   .buttonDiv.playAgain button {
@@ -79,6 +83,11 @@
 }
 
 @media (max-width: 300px) {
+  .buttonDiv.rules button {
+    font-size: 0.9rem;
+    padding: 10px 25px;
+  }
+
   .buttonDiv.playAgain button {
     padding: 13px 50px;
   }
