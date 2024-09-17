@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Scoreboard from "./components/scoreboard";
 import Buttons from "./components/buttons";
 import Attributions from "./components/attributions";
+import Rules from "./components/rules";
 
 import Original from "./original";
 import Bonus from "./bonus";
@@ -19,6 +20,7 @@ import spockImg from "./images/icon-spock.svg";
 
 function App() {
   const [gameType, setGameType] = useState("original");
+  const [showRules, setShowRules] = useState(true);
 
   const [userPick, setUserPick] = useState("scissors");
   const [housePick, setHousePick] = useState("");
@@ -88,6 +90,8 @@ function App() {
 
       <Buttons type={"rules"} text={"rules"} />
       <Attributions />
+
+      <Rules gameType={gameType} visible={showRules} close={setShowRules} />
     </div>
   );
 }
