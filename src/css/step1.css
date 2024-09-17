@@ -19,13 +19,13 @@
 }
 
 .step2Section .pickedOptions.houseHand .handSigns {
-  transform: translateX(400%);
+  transform: translateX(1000%);
   animation: slideHandIn 0.3s ease 0.5s forwards;
 }
 
 @keyframes slideHandIn {
   from {
-    transform: translateX(400%);
+    transform: translateX(1000%);
   }
   to {
     transform: translateX(0%);
