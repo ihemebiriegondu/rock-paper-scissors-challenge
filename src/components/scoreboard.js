@@ -1,7 +1,19 @@
-import React from "react";
-import '../css/scoreboard.css'
+import React, { useEffect } from "react";
+import "../css/scoreboard.css";
 
-export default function Scoreboard({score}) {
+export default function Scoreboard({ score, winner }) {
+  useEffect(() => {
+    const scoreText = document.querySelector(".scoreText");
+    scoreText.classList.remove("slideIn");
+    scoreText.classList.add("slideOut");
+
+    setTimeout(() => {
+      scoreText.classList.remove("slideOut");
+      scoreText.classList.add("slideIn");
+    }, 300);
+    return () => {};
+  }, [winner]);
+
   return (
     <header>
       <div className="options">
@@ -11,7 +23,7 @@ export default function Scoreboard({score}) {
       </div>
       <div className="score">
         <p>score</p>
-        <h1>{score}</h1>
+        <h1 className="scoreText">{score}</h1>
       </div>
     </header>
   );

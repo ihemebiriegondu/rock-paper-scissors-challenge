@@ -25,6 +25,17 @@
   padding: 10px 30px;
   border: 2px solid rgba(255, 255, 255, 0.76);
   color: white;
+  transform: translateX(300%);
+  animation: buttonSlideIn 0.5s ease 0.8s forwards;
+}
+
+@keyframes buttonSlideIn {
+  from {
+    transform: translateX(300%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
 .buttonDiv.playAgain button {

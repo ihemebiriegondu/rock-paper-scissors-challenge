@@ -9,6 +9,18 @@
   align-items: center;
   justify-self: center;
   gap: 6%;
+  animation: showDecision 0.5s ease-in-out forwards;
+}
+
+@keyframes showDecision {
+  from {
+    transform: scale(0.1);
+    rotate: 20deg;
+  }
+  to {
+    transform: scale(1);
+    rotate: 0deg;
+  }
 }
 
 .decisionSection .pickedOptions {
@@ -33,8 +45,28 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  box-shadow: 0 0 0 45px hsla(214, 17%, 34%, 0.2),
-    0 0 0 100px hsla(213, 16%, 44%, 0.1), 0 0 0 160px hsla(214, 47%, 23%, 0.205);
+  box-shadow: 0 0 0 45px hsla(214, 17%, 34%, 0),
+    0 0 0 100px hsla(213, 16%, 44%, 0), 0 0 0 160px hsla(214, 47%, 23%, 0);
+  animation: showRadial 1s ease 0.3s infinite forwards;
+}
+
+@keyframes showRadial {
+  0% {
+    box-shadow: 0 0 0 0px hsla(214, 17%, 34%, 0);
+  }
+  34% {
+    box-shadow: 0 0 0 45px hsla(214, 17%, 34%, 0.2),
+      0 0 0 0px hsla(213, 16%, 44%, 0);
+  }
+  67% {
+    box-shadow: 0 0 0 45px hsla(214, 17%, 34%, 0.2),
+      0 0 0 100px hsla(213, 16%, 44%, 0.1), 0 0 0 0px hsla(214, 47%, 23%, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 45px hsla(214, 17%, 34%, 0.2),
+      0 0 0 100px hsla(213, 16%, 44%, 0.1),
+      0 0 0 160px hsla(214, 47%, 23%, 0.205);
+  }
 }
 
 .decisionSection .playAgainDiv {
@@ -72,10 +104,38 @@
     row-gap: 80px;
   }
 
+  @keyframes showDecision {
+    from {
+      transform: scale(0.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
   .decisionSection .pickedOptions.winner .radialBg {
-    box-shadow: 0 0 0 25px hsla(214, 17%, 34%, 0.2),
-      0 0 0 60px hsla(213, 16%, 44%, 0.1),
-      0 0 0 100px hsla(214, 47%, 23%, 0.205);
+    box-shadow: 0 0 0 25px hsla(214, 17%, 34%, 0),
+      0 0 0 60px hsla(213, 16%, 44%, 0),
+      0 0 0 100px hsla(214, 47%, 23%, 0);
+  }
+
+  @keyframes showRadial {
+    0% {
+      box-shadow: 0 0 0 0px hsla(214, 17%, 34%, 0);
+    }
+    34% {
+      box-shadow: 0 0 0 25px hsla(214, 17%, 34%, 0.2),
+        0 0 0 0px hsla(213, 16%, 44%, 0);
+    }
+    67% {
+      box-shadow: 0 0 0 25px hsla(214, 17%, 34%, 0.2),
+        0 0 0 60px hsla(213, 16%, 44%, 0.1), 0 0 0 0px hsla(214, 47%, 23%, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 25px hsla(214, 17%, 34%, 0.2),
+        0 0 0 60px hsla(213, 16%, 44%, 0.1),
+        0 0 0 100px hsla(214, 47%, 23%, 0.205);
+    }
   }
 
   .decisionSection .playAgainDiv {
@@ -111,8 +171,27 @@
   .decisionSection .pickedOptions.winner .radialBg {
     width: 114px;
     height: 114px;
-    box-shadow: 0 0 0 18px hsla(214, 17%, 34%, 0.2),
-      0 0 0 45px hsla(213, 16%, 44%, 0.1), 0 0 0 75px hsla(214, 47%, 23%, 0.205);
+    box-shadow: 0 0 0 18px hsla(214, 17%, 34%, 0),
+      0 0 0 45px hsla(213, 16%, 44%, 0), 0 0 0 75px hsla(214, 47%, 23%, 0);
+  }
+
+  @keyframes showRadial {
+    0% {
+      box-shadow: 0 0 0 0px hsla(214, 17%, 34%, 0);
+    }
+    34% {
+      box-shadow: 0 0 0 18px hsla(214, 17%, 34%, 0.2),
+        0 0 0 0px hsla(213, 16%, 44%, 0);
+    }
+    67% {
+      box-shadow: 0 0 0 18px hsla(214, 17%, 34%, 0.2),
+        0 0 0 45px hsla(213, 16%, 44%, 0.1), 0 0 0 0px hsla(214, 47%, 23%, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 18px hsla(214, 17%, 34%, 0.2),
+        0 0 0 45px hsla(213, 16%, 44%, 0.1),
+        0 0 0 75px hsla(214, 47%, 23%, 0.205);
+    }
   }
 }
 

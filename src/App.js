@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <Scoreboard score={score} />
+      <Scoreboard score={score} winner={winner} />
       <BrowserRouter>
         <Routes>
           <Route

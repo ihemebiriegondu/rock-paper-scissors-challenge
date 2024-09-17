@@ -54,20 +54,25 @@ export default function FirstStep({
     setTimeout(() => setDelayedHousePick(housePick), 500);
 
     const selectWinnerFunction = () => {
+      setWinner("");
+      sessionStorage.setItem("winner", "");
       if (userPick === housePick) {
-        setWinner("");
-        sessionStorage.setItem("winner", "");
+        setWinner("draw");
+        setTimeout(() => setScore(score), 300);
+        sessionStorage.setItem("winner", "draw");
       } else {
         let winnerSign = logic(userPick, housePick);
         if (userPick === winnerSign) {
           setWinner("user");
           sessionStorage.setItem("winner", "user");
-          setScore(score + 1);
+          setScore(score);
+          setTimeout(() => setScore(score + 1), 300);
         } else {
           setWinner("house");
           sessionStorage.setItem("winner", "house");
+          setScore(score);
           if (score >= 1) {
-            setScore(score - 1);
+            setTimeout(() => setScore(score - 1), 300);
           }
         }
       }
@@ -88,7 +93,7 @@ export default function FirstStep({
           <HandSigns location={"steps"} hand={userPick} handImg={userImg} />
           <p>You Picked</p>
         </div>
-        <div className="pickedOptions">
+        <div className="pickedOptions houseHand">
           <HandSigns location={"steps"} hand={housePick} handImg={houseImg} />
           <p>The house Picked</p>
         </div>

@@ -10,6 +10,26 @@ header {
   align-items: center;
   position: relative;
   z-index: 2;
+
+  animation: dropnBounce 0.6s ease-in forwards;
+}
+
+@keyframes dropnBounce {
+  0% {
+    transform: translateY(-150%);
+  }
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  90% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 header .options {
@@ -28,6 +48,7 @@ header .score {
   border-radius: 5px;
   text-align: center;
   width: 15%;
+  overflow: hidden;
 }
 
 header .score p {
@@ -35,10 +56,37 @@ header .score p {
   font-weight: 500;
 }
 
-header .score h1 {
+header .score .scoreText {
   font-weight: 700;
   color: hsl(229, 25%, 31%);
   font-size: 3rem;
+  transform: translateX(-100%);
+}
+
+header .score .scoreText.slideIn {
+  animation: textSlideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes textSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+header .score .scoreText.slideOut {
+  animation: textSlideOut 0.5s ease-in-out forwards;
+}
+
+@keyframes textSlideOut {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 @media (max-width: 992px) {
@@ -55,7 +103,7 @@ header .score h1 {
     font-size: 0.9rem;
   }
 
-  header .score h1 {
+  header .score .scoreText {
     font-size: 2.5rem;
   }
 }
@@ -79,7 +127,7 @@ header .score h1 {
     font-size: 0.8rem;
   }
 
-  header .score h1 {
+  header .score .scoreText {
     font-size: 2rem;
   }
 }
