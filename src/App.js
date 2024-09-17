@@ -20,12 +20,25 @@ import spockImg from "./images/icon-spock.svg";
 
 function App() {
   const [gameType, setGameType] = useState("original");
-  const [showRules, setShowRules] = useState(true);
+  const [showRules, setShowRules] = useState(false);
 
-  const [userPick, setUserPick] = useState("scissors");
-  const [housePick, setHousePick] = useState("");
+  const [userPick, setUserPick] = useState(
+    sessionStorage.getItem("userPick") === null
+      ? ""
+      : sessionStorage.getItem("userPick")
+  );
+  const [housePick, setHousePick] = useState(
+    sessionStorage.getItem("housePick") === null
+      ? ""
+      : sessionStorage.getItem("housePick")
+  );
 
-  const [winner, setWinner] = useState("user");
+  const [winner, setWinner] = useState(
+    sessionStorage.getItem("winner") === null
+      ? ""
+      : sessionStorage.getItem("winner")
+  );
+  const [score, setScore] = useState(0);
 
   const handSigns = [
     { hand: "rock", handImg: rockImg },
@@ -39,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <Scoreboard />
+      <Scoreboard score={score} />
       <BrowserRouter>
         <Routes>
           <Route
@@ -50,6 +63,7 @@ function App() {
                   options={originalHandSigns}
                   setGameType={setGameType}
                   setUserPick={setUserPick}
+                  setHousePick={setHousePick}
                 />
               ) : (
                 <Bonus options={handSigns} setGameType={setGameType} />
@@ -66,8 +80,9 @@ function App() {
                 }
                 userPick={userPick}
                 housePick={housePick}
-                setHousePick={setHousePick}
                 setWinner={setWinner}
+                score={score}
+                setScore={setScore}
               />
             }
           />
@@ -88,7 +103,11 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <Buttons type={"rules"} text={"rules"} />
+      <Buttons
+        type={"rules"}
+        text={"rules"}
+        clickFunction={() => setShowRules(true)}
+      />
       <Attributions />
 
       <Rules gameType={gameType} visible={showRules} close={setShowRules} />

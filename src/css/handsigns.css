@@ -85,11 +85,25 @@
   text-align: center;
 }
 
-.handSigns.noImg {
+.handSigns.noImg,
+.handSigns.noImg.rock,
+.handSigns.noImg.paper,
+.handSigns.noImg.scissors {
   border-color: transparent;
+  box-shadow: none;
 }
 
-.handSigns.noImg .innerBg {
+.handSigns.noImg:hover,
+.handSigns.noImg.rock:hover,
+.handSigns.noImg.paper:hover,
+.handSigns.noImg.scissors:hover {
+  box-shadow: none;
+}
+
+.handSigns.noImg .innerBg,
+.handSigns.noImg.rock .innerBg,
+.handSigns.noImg.paper .innerBg,
+.handSigns.noImg.scissors .innerBg {
   background-color: hsla(238, 48%, 15%, 0.45);
   box-shadow: none;
 }

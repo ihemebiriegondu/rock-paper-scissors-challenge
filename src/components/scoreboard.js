@@ -1,7 +1,7 @@
 import React from "react";
 import '../css/scoreboard.css'
 
-export default function Scoreboard() {
+export default function Scoreboard({score}) {
   return (
     <header>
       <div className="options">
@@ -11,7 +11,7 @@ export default function Scoreboard() {
       </div>
       <div className="score">
         <p>score</p>
-        <h1>12</h1>
+        <h1>{score}</h1>
       </div>
     </header>
   );

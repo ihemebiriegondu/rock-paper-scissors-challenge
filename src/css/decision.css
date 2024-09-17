@@ -50,6 +50,10 @@
   margin-bottom: 10px;
 }
 
+.decisionSection .playAgainDiv {
+  margin: auto;
+}
+
 @media (max-width: 1024px) {
   .decisionSection {
     width: 90%;

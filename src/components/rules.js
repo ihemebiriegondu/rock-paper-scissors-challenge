@@ -7,15 +7,22 @@ import "../css/rules.css";
 
 export default function Rules({ gameType, visible, close }) {
   return (
-    <section className="rulesBackdrop">
-      <div className="rulesCard">
-        <h2>rules</h2>
-        {gameType === "original" ? (
-          <img alt="rules" src={rulesOriginal} className="rulesImg" />
-        ) : (
-          <img alt="rules" src={rulesBonus} className="rulesImg" />
-        )}
-        <img alt="closeIcon" src={closeIcon} className="closeIcon" />
+    <section className={`rulesBackdrop ${!visible && "hidden"}`}>
+      <div className="rulesSlideInContainer">
+        <div className="rulesCard">
+          <h2>rules</h2>
+          {gameType === "original" ? (
+            <img alt="rules" src={rulesOriginal} className="rulesImg" />
+          ) : (
+            <img alt="rules" src={rulesBonus} className="rulesImg" />
+          )}
+          <img
+            alt="closeIcon"
+            src={closeIcon}
+            className="closeIcon"
+            onClick={() => close(false)}
+          />
+        </div>
       </div>
     </section>
   );
