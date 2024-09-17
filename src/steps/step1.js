@@ -11,7 +11,7 @@ export default function FirstStep({
   setWinner,
   score,
   setScore,
-  setSwipeScore
+  setSwipeScore,
 }) {
   const navigate = useNavigate();
 
@@ -73,24 +73,27 @@ export default function FirstStep({
       sessionStorage.setItem("winner", "");
       if (userPick === housePick) {
         setWinner("draw");
-        setSwipeScore(false)
+        setSwipeScore(false);
         setTimeout(() => setScore(score), 300);
         sessionStorage.setItem("winner", "draw");
+        sessionStorage.setItem("score", score);
       } else {
         let winnerSign = logic(userPick, housePick);
         if (userPick === winnerSign) {
           setWinner("user");
           sessionStorage.setItem("winner", "user");
           setScore(score);
-          setSwipeScore(true)
-          setTimeout(() => setScore(score + 1), 300);
+          setSwipeScore(true);
+          setTimeout(() => setScore(parseInt(score) + 1), 300);
+          sessionStorage.setItem("score", parseInt(score) + 1);
         } else {
           setWinner("house");
           sessionStorage.setItem("winner", "house");
           setScore(score);
-          setSwipeScore(true)
+          setSwipeScore(true);
           if (score >= 1) {
-            setTimeout(() => setScore(score - 1), 300);
+            setTimeout(() => setScore(parseInt(score) - 1), 300);
+            sessionStorage.setItem("score", parseInt(score) - 1);
           }
         }
       }
@@ -102,7 +105,15 @@ export default function FirstStep({
     return () => {
       clearTimeout();
     };
-  }, [housePick, userPick, setWinner, navigate, score, setScore, setSwipeScore]);
+  }, [
+    housePick,
+    userPick,
+    setWinner,
+    navigate,
+    score,
+    setScore,
+    setSwipeScore,
+  ]);
 
   return (
     <main className="step2">

@@ -39,7 +39,11 @@ function App() {
       : sessionStorage.getItem("winner")
   );
 
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(
+    sessionStorage.getItem("score") === null
+      ? 0
+      : sessionStorage.getItem("score")
+  );
   const [swipeScore, setSwipeScore] = useState("false");
 
   const handSigns = [
