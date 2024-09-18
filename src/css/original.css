@@ -6,6 +6,7 @@
   height: 350px;
   padding-top: 50px;
   margin: 0 auto 10px auto;
+  overflow-x: hidden;
 }
 
 .originalSection .selectHand {
