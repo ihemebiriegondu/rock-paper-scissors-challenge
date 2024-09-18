@@ -5,7 +5,7 @@
   width: 350px;
   height: 420px;
   padding-top: 50px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
 }
 
 .bonusSection .selectHand {
