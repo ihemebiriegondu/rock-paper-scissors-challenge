@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [SolutionURL]([https://github.com/ihemebiriegondu/rock-paper-scissors-challenge.git](https://www.frontendmentor.io/solutions/rock-paper-scissors-challenge-with-reactjs-UK67ILqoz5))
+- Solution URL: [SolutionURL](https://www.frontendmentor.io/solutions/rock-paper-scissors-challenge-with-reactjs-UK67ILqoz5)
 - Live Site URL: [LiveSite](https://rock-paper-scissors-challenge-orcin.vercel.app/)
 
 ## My process
